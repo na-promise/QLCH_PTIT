@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html layout:decorator="common/home.html">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create Department</title>
+</head>
+<body>
+	<div layout:fragment="content" class="col-12 col-sm-9">
+		<div class="row">
+			<h6>Update Department</h6>
+		</div>
+		<hr />
+		<div class="row">
+			<form th:action="@{/employee/update}" method="post">
+				<div class="mb-3">
+					<label class="form-label">Id:</label> <input readonly="readonly"
+						th:value="${employee.id}" type="number" name="id"
+						class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Username:</label> <input readonly="readonly"
+						th:value="${employee.username}" type="text" name="username"
+						class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Password:</label> <input
+						th:value="${employee.password}" type="text" name="password"
+						class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Tên:</label> <input
+						th:value="${employee.name}" type="text" name="name"
+						class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Ngày sinh:</label> <input
+						th:value="${employee.dateOfBirth}" type="date" name="date_birth"
+						class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Địa chỉ:</label> <input
+						th:value="${employee.address}" type="text" name="address"
+						class="form-control">
+				</div>
+				<div class="mb-3">
+					<button class="btn btn-primary" type="submit">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

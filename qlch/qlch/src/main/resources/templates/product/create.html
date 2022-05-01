@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html layout:decorator="common/home.html">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create Department</title>
+</head>
+<body>
+	<div layout:fragment="content" class="col-12 col-sm-9">
+		<div class="row">
+			<h6>Create Department</h6>
+		</div>
+		<hr />
+		<div class="row">
+			<form th:action="@{/product/create}" method="post">
+				<div class="mb-3">
+					<label class="form-label">Tên mặt hàng:</label> <input type="text"
+						name="name" class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Số lượng còn lại:</label> <input
+						type="number" name="availableQuantity" class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Giá bán:</label> <input type="number"
+						name="price" class="form-control">
+				</div>
+				<select class="form-select form-select-sm"
+					aria-label=".form-select-sm example" name="category">
+					<option selected>Chọn loại mặt hàng:</option>
+					<option th:each="category: ${category}" th:value="${category.id}" th:text="${category.name}"></option>
+				</select>
+				<br><br>
+				<div class="mb-3">
+					<button class="btn btn-primary" type="submit">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
